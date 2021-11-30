@@ -1,0 +1,12 @@
+.panel-center {
+	margin: auto;
+	margin-top: 15%;
+	width: 30%;
+	padding: 10px;
+}
+.form-signin{
+	margin-top: 50px;
+}
+.text-larger{
+	font-size: 30px;
+}
