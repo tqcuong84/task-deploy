@@ -22,7 +22,7 @@ Route::post('signup', 'HomeController@signup');
 Route::get('signout', 'HomeController@signout');
 
 Route::get('dashboard', 'DashboardController@index')->name('dashboard')->middleware(UserLogin::class);
-Route::post('deploy', 'DashboardController@deploy')->middleware(UserLogin::class);
+Route::get('deploy', 'DashboardController@deploy');
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();

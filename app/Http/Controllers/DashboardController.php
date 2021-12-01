@@ -9,4 +9,15 @@ class DashboardController extends Controller
         $info = session('user_login');
         return view('dashboard', compact('info'));
     }
+
+    public function deploy(){
+        $process = new Process(['/home/plantactic/public_html/alt/run_artisan.sh']);
+        $process->run();
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+        return response()->json([
+            'status' => true
+        ]);
+    }
 }
