@@ -4,6 +4,9 @@
 	width: 30%;
 	padding: 10px;
 }
+.panel-center__larger {
+	width: 50%;
+}
 .form-signin{
 	margin-top: 50px;
 }

@@ -13,15 +13,9 @@ use App\Http\Middleware\UserLogin;
 |
 */
 
-Route::get('/', 'HomeController@index')->name('signin');
-Route::post('/', 'HomeController@index');
-
-Route::get('signup', 'HomeController@signup');
-Route::post('signup', 'HomeController@signup');
-
-Route::get('signout', 'HomeController@signout');
-
-Route::get('dashboard', 'DashboardController@index')->name('dashboard')->middleware(UserLogin::class);
+Route::get('/', 'TodosController@index');
+Route::post('add', 'TodosController@add');
+Route::get('delete/{id}', 'TodosController@delete');
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
